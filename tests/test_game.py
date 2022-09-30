@@ -29,9 +29,9 @@ class TestGame(unittest.TestCase):
         game = Game(ai_a, ai_b)
         for _ in range(3):
             game.play(ai_a, Cell.A)
-            print(game.grid)
+            #print(game.grid)
             game.play(ai_b, Cell.B)
-            print(game.grid)
+            #print(game.grid)
         self.assertEqual("\n" + str(game.grid), GRID_DUMB_6)
 
     def test_line_win(self):
@@ -40,7 +40,7 @@ class TestGame(unittest.TestCase):
         self.assertTrue(grid.win(0, 0))
         self.assertFalse(grid.win(0, 6))
 
-    @unittest.skip
+    #@unittest.skip
     def test_column_win(self):
         grid = Grid()
         for line in range(4):

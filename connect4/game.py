@@ -45,6 +45,18 @@ class Grid:
                 adjacent = 0
 
         # TODO: Vertical
+        for j in range(self.columns):
+            if self.grid[line][j] == color:
+                adjacent += 1
+                if adjacent == 4:
+                    return True
+            else:
+                adjacent = 0
+            print("i=",line)
+            print("j=",column)
+            print("adj =",adjacent)
+
+
         # TODO: Diagonal
         return False
 
