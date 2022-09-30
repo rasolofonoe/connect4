@@ -20,7 +20,7 @@ class TestGame(unittest.TestCase):
         grid.grid[0] = [Cell.A, Cell.B, Cell.A, Cell.B, Cell.A, Cell.B, Cell.EMPTY]
         self.assertEqual("\n" + str(grid), GRID_DUMB_6)
 
-    @unittest.skip
+    #@unittest.skip
     def test_dumb_6(self):
         from connect4.dumb_ia import DumbIA
 
@@ -29,7 +29,9 @@ class TestGame(unittest.TestCase):
         game = Game(ai_a, ai_b)
         for _ in range(3):
             game.play(ai_a, Cell.A)
+            print(game.grid)
             game.play(ai_b, Cell.B)
+            print(game.grid)
         self.assertEqual("\n" + str(game.grid), GRID_DUMB_6)
 
     def test_line_win(self):
@@ -66,7 +68,9 @@ class TestGame(unittest.TestCase):
         self.assertFalse(game.grid.tie())
         for _ in range(21):
             game.play(ai_a, Cell.A)
+            #print(game.grid)
             game.play(ai_b, Cell.B)
+            #print(game.grid)
         self.assertTrue(game.grid.tie())
 
 
