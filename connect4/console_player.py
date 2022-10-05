@@ -6,5 +6,6 @@ class ConsolePlayer(Player):
     keyboard."""
 
     def play(self, grid: Grid) -> int:
+        print(grid)
         col = int(input("Colum:"))
         return col
