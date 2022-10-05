@@ -1,5 +1,5 @@
 from enum import Enum
-
+import numpy
 
 class Cell(Enum):
     """Enumeration representing a Connect4 Cell."""
@@ -55,16 +55,14 @@ class Grid:
                 adjacent = 0
 
         # TODO: Vertical
-        for j in range(self.columns):
-            if self.grid[line][j] == color:
+        Tr = numpy.transpose(self.grid)
+        for cell in Tr[line]:
+            if cell == color:
                 adjacent += 1
                 if adjacent == 4:
                     return True
             else:
                 adjacent = 0
-            print("i=",line)
-            print("j=",column)
-            print("adj =",adjacent)
 
 
         # TODO: Diagonal
