@@ -70,10 +70,19 @@ class Grid:
 
     def tie(self) -> bool:
         """Check if the grid is full."""
-        # TODO
-        return False
-
-
+        nb = 0
+        for i in range(self.lines):
+            for j in range(self.columns):
+                print("i=",i)
+                print("j=",j)
+                if self.grid[i][j] == Cell.EMPTY:
+                    return False
+                else:
+                    if (i == self.lines and j == self.columns) and (self.grid[i][j] != Cell.EMPTY):
+                        nb = nb +1
+                        print("nb=",nb)
+                        return True
+                    return True
 class Player:
     """Abstract base class for Players in this game."""
 

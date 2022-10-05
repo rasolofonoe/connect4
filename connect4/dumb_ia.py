@@ -20,7 +20,10 @@ class DumbIA(Player):
                 else:
                     if j == 6:
                         i = i +1
-                        j = 1
+                        j = 0
+                        if i == 6:
+                            i = 0
+                            break
 
 
 
